@@ -1,0 +1,12 @@
+version: '3'
+services:
+  avrodoc:
+    environment:
+      - PORT=8124
+      - SCHEMA_DIR=/avrodoc/schemata
+    volumes:
+      - "./schemata:/avrodoc/schemata"  
+    build: .
+    ports:
+      - "8124:8124"
+    command: node app
